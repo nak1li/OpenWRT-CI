@@ -6,6 +6,8 @@ CONFIG_PACKAGE_luci-app-autoreboot=y
 CONFIG_PACKAGE_luci-app-partexp=y
 CONFIG_PACKAGE_luci-app-samba4=y
 CONFIG_PACKAGE_luci-app-upnp=y
+CONFIG_PACKAGE_luci-app-smartdns=y
+CONFIG_PACKAGE_smartdns=y
 CONFIG_PACKAGE_snmpd=y
 #删除插件
 CONFIG_PACKAGE_luci-app-attendedsysupgrade=n
