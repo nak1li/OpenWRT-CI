@@ -1,0 +1,25 @@
+name: Weekly Update Check
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'  # 每周日凌晨3点
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  check-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check upstream updates
+        run: |
+          echo "Checking for upstream updates..."
+          # 这里可以添加检查上游更新的逻辑
+      - name: Trigger main workflow
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'OWRT-ALL.yml',
+              ref: 'main'
+            })
