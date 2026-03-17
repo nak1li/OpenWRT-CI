@@ -3,6 +3,9 @@ name: QCA-ALL
 
 #CI计划
 on:
+  # 每周日凌晨3点自动编译
+  schedule:
+    - cron: '0 3 * * 0'
   #自动编译：当Auto-Clean运行完成后
   workflow_run:
     workflows: ["Auto-Clean"]
