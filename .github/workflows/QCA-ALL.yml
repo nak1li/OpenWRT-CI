@@ -1,6 +1,10 @@
 #CI项目
 name: QCA-ALL
 
+# 防止重复编译
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 #CI计划
 on:
   # 每周日凌晨3点自动编译
