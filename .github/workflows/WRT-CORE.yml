@@ -235,7 +235,7 @@ jobs:
 
             ### 📦 包含插件
             - dockerman - Docker管理器
-            - passwall - 翻墙神器
+            - homeproxy (sing-box) - 轻量代理
             - samba4 - 文件共享
             - smartdns - 智能DNS
             - autoreboot - 自动重启
