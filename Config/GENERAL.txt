@@ -41,7 +41,7 @@ CONFIG_PACKAGE_kmod-nft-queue=y
 CONFIG_PACKAGE_kmod-nft-socket=y
 CONFIG_PACKAGE_kmod-nft-tproxy=y
 CONFIG_PACKAGE_kmod-nft-xfrm=y
-CONFIG_PACKAGE_kmod-sound-core=y
+# CONFIG_PACKAGE_kmod-sound-core is not set
 CONFIG_PACKAGE_kmod-tun=y
 CONFIG_PACKAGE_kmod-usb3=y
 CONFIG_PACKAGE_kmod-usb-audio=y
@@ -57,13 +57,13 @@ CONFIG_PACKAGE_kmod-usb-net-cdc-ncm=y
 CONFIG_PACKAGE_kmod-usb-net-cdc-subset=y
 CONFIG_PACKAGE_kmod-usb-net-huawei-cdc-ncm=y
 CONFIG_PACKAGE_kmod-usb-net-ipheth=y
-CONFIG_PACKAGE_kmod-usb-net-qmi-wwan=y
-CONFIG_PACKAGE_kmod-usb-net-qmi-wwan-fibocom=y
-CONFIG_PACKAGE_kmod-usb-net-qmi-wwan-quectel=y
+# CONFIG_PACKAGE_kmod-usb-net-qmi-wwan is not set
+# CONFIG_PACKAGE_kmod-usb-net-qmi-wwan-fibocom is not set
+# CONFIG_PACKAGE_kmod-usb-net-qmi-wwan-quectel is not set
 CONFIG_PACKAGE_kmod-usb-net-rndis=y
 CONFIG_PACKAGE_kmod-usb-net-rtl8150=y
 CONFIG_PACKAGE_kmod-usb-net-rtl8152=y
-CONFIG_PACKAGE_kmod-usb-net-sierrawireless=y
+# CONFIG_PACKAGE_kmod-usb-net-sierrawireless is not set
 CONFIG_PACKAGE_kmod-usb-ohci=y
 CONFIG_PACKAGE_kmod-usb-storage=y
 CONFIG_PACKAGE_kmod-usb-storage-extras=y
