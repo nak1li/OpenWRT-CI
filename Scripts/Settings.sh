@@ -60,6 +60,8 @@ if [[ "${WRT_TARGET^^}" == *"QUALCOMMAX"* ]]; then
 	else
 		echo "CONFIG_NSS_FIRMWARE_VERSION_12_5=y" >> ./.config
 	fi
+	#关闭ath11k NSS支持，避免编译时报qca-nss-drv-wifi-meshmgr缺失
+	echo "CONFIG_ATH11K_NSS_SUPPORT=n" >> ./.config
 	#无WIFI配置调整Q6大小
 	if [[ "${WRT_CONFIG,,}" == *"wifi"* && "${WRT_CONFIG,,}" == *"no"* ]]; then
 		echo "WRT_WIFI=wifi-no" >> $GITHUB_ENV
