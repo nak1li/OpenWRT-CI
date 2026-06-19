@@ -62,6 +62,8 @@ if [[ "${WRT_TARGET^^}" == *"QUALCOMMAX"* ]]; then
 	fi
 	#关闭ath11k NSS支持，避免编译时报qca-nss-drv-wifi-meshmgr缺失
 	echo "CONFIG_ATH11K_NSS_SUPPORT=n" >> ./.config
+	#开启IOMMU API，解决关闭NSS后ath11k-ahb的iommu_domain_alloc报错
+	echo "CONFIG_IOMMU_API=y" >> ./.config
 	#无WIFI配置调整Q6大小
 	if [[ "${WRT_CONFIG,,}" == *"wifi"* && "${WRT_CONFIG,,}" == *"no"* ]]; then
 		echo "WRT_WIFI=wifi-no" >> $GITHUB_ENV
