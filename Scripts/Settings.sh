@@ -47,9 +47,7 @@ fi
 #高通平台调整
 DTS_PATH="./target/linux/qualcommax/dts/"
 if [[ "${WRT_TARGET^^}" == *"QUALCOMMAX"* ]]; then
-	#取消nss相关feed
-	echo "CONFIG_FEED_nss_packages=n" >> ./.config
-	echo "CONFIG_FEED_sqm_scripts_nss=n" >> ./.config
+	#开启NSS相关feed（保留，不关闭）
 	#开启sqm-nss插件
 	echo "CONFIG_PACKAGE_luci-app-sqm=y" >> ./.config
 	echo "CONFIG_PACKAGE_sqm-scripts-nss=y" >> ./.config
@@ -60,10 +58,8 @@ if [[ "${WRT_TARGET^^}" == *"QUALCOMMAX"* ]]; then
 	else
 		echo "CONFIG_NSS_FIRMWARE_VERSION_12_5=y" >> ./.config
 	fi
-	#关闭ath11k NSS支持，避免编译时报qca-nss-drv-wifi-meshmgr缺失
-	echo "CONFIG_ATH11K_NSS_SUPPORT=n" >> ./.config
-	#开启IOMMU API，解决关闭NSS后ath11k-ahb的iommu_domain_alloc报错
-	echo "CONFIG_IOMMU_API=y" >> ./.config
+	#保持ath11k NSS支持开启（满血WiFi加速）
+	echo "CONFIG_ATH11K_NSS_SUPPORT=y" >> ./.config
 	#无WIFI配置调整Q6大小
 	if [[ "${WRT_CONFIG,,}" == *"wifi"* && "${WRT_CONFIG,,}" == *"no"* ]]; then
 		echo "WRT_WIFI=wifi-no" >> $GITHUB_ENV
