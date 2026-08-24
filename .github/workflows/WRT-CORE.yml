@@ -234,7 +234,6 @@ jobs:
             这是一份来自小胖的 OpenWRT 固件~
 
             ### 📦 包含插件
-            - dockerman - Docker管理器
             - homeproxy (sing-box) - 轻量代理
             - samba4 - 文件共享
             - smartdns - 智能DNS
