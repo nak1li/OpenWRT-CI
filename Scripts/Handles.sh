@@ -108,9 +108,11 @@ if [ -d *"luci-app-netspeedtest"* ]; then
 	cd $PKG_PATH && echo "netspeedtest has been fixed!"
 fi
 #修复sing-box 1.13.x版本API兼容问题，锁为路由器当前版本1.13.3
+#同时删除Go模块缓存中不兼容的新版go-json-experiment（会拉取旧版兼容版本替代）
 SB_FILE=$(find ../feeds/packages/ -maxdepth 3 -type f -wholename "*/sing-box/Makefile")
 if [ -f "$SB_FILE" ]; then
 	echo " "
+	rm -rf /mnt/build_wrt/dl/go-mod-cache/github.com/go-json-experiment/json@v0.0.0-20250813024750-ebf49471dced
 	sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.13.3/g' $SB_FILE
 	sed -i 's/PKG_HASH:=.*/PKG_HASH:=bf8933cd43e2797afcffb47528282e1c1aee078bf5eeda888d80a151fef726e1/g' $SB_FILE
 	cd $PKG_PATH && echo "sing-box has been locked to 1.13.3!"
