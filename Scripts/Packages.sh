@@ -44,7 +44,7 @@ UPDATE_PACKAGE "aurora-config" "eamonxg/luci-app-aurora-config" "master"
 # ============================================================
 # 核心插件
 # ============================================================
-UPDATE_PACKAGE "homeproxy" "immortalwrt/homeproxy" "main"
+UPDATE_PACKAGE "homeproxy" "immortalwrt/homeproxy" "master" "pkg"
 
 # ============================================================
 # 可选插件（按需启用）
