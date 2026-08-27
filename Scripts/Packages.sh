@@ -117,4 +117,5 @@ UPDATE_VERSION() {
 	done
 }
 
-UPDATE_VERSION "sing-box"
+# 不更新 sing-box —— 1.13.x + 新版 go-json-experiment 编译失败
+#UPDATE_VERSION "sing-box"
